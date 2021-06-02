@@ -149,21 +149,32 @@ echo substr(str_shuffle($lotynuAbecele), 0, 3);
 echo '<br>';
 echo '<br>';
 
-echo 'Desimtas uzdavinys';
+echo 'Vienuoliktas uzdavinys';
 echo '<br>';
 
 $string8 = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood"; 
 $string9 = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
-$words2 = array_merge(explode(' ', $string8), explode(' ', $string9)); 
+// $words2 = array_merge(explode(' ', $string8), explode(' ', $string9)); 
+$words2 = explode(' ', $string8." ".$string9); 
 $words2Length = 10;
+shuffle($words2);
+
+//print_r( array_slice( $words2, 0, 10)  );
+
+$result = "";
 for ($i = 0; $i < $words2Length; $i++) { 
-      //echo $words2[$i];
-      echo '<br>';
-      
-        echo substr(str_shuffle($words2[$i]), 0, 10);
+    //   echo '<br>';
+      $result.= $words2[   rand(0,  count($words2)-1)    ]." ";
+        // echo $words2[   rand(0,  count($words2)-1)    ];
       
 
       
 }
+//echo $result."<br>";
 
-
+$wordsUnique10 = array_slice( $words2, 0, 10);
+$result = "";
+for ($i=0; $i < count($wordsUnique10) ; $i++) { 
+    $result.= $wordsUnique10[$i]." ";
+}
+echo $result;

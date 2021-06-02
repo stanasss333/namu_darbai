@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+
+
+$hour = 20;
+
+echo $hour."<br>";
+
+
+$newHour = "0".$hour;
+echo $newHour."<br>";
+$goodHour = substr($newHour, -2);
+
+echo $goodHour. ":". $goodHour;
+// echo 1`{$goodHour} :  {$goodHour`;
