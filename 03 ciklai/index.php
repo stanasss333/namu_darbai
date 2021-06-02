@@ -104,6 +104,22 @@ echo"<div style='color:green; line-height: 7px; font-size: 14px;'>$string</div>"
 echo '<br>';
 echo '<br>';
 
+echo 'Penktas uzdavinys';
+echo '<br>';
+$plotis = 100;
+for ($j = 0; $j < $plotis; $j++) {
+    for ($i = 0; $i < $plotis; $i++) {
+        if ($i === $plotis - $j - 1 || $j === $i) {
+            echo "<span style='line-height: 3px; font-size: 16px; color: red;'>*</span>";
+        } else {
+            echo "<span style='line-height: 3px; font-size: 14px; color: green;'>*</span>";
+        }
+    }
+    echo "<span style='font-size: 1px;'><br></span>";
+}
+echo '<br>';
+echo '<br>';
+
 echo 'Sestas uzdavinys';
 echo '<br>';
 
