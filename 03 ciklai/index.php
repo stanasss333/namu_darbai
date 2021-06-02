@@ -84,7 +84,95 @@ for ($i=1; $i <= $max; $i++) {
 }
 echo $sk_str;
 
+echo '<br>';
+echo '<br>';
 
+echo 'Ketvirtas uzdavinys';
+echo '<br>';
 
+$string = '';
+for ($i=0; $i < 100; $i++) { 
+    $count = 0;
+    while($count < 100) { 
+        $string .='*';
+        $count++;
+    }
+    $string .= '<br>';
+}
+echo"<div style='color:green; line-height: 7px; font-size: 14px;'>$string</div>";
 
+echo '<br>';
+echo '<br>';
 
+echo 'Sestas uzdavinys';
+echo '<br>';
+
+echo 'A dalis';
+echo '<br>';
+$metimas = '';
+while ($metimas !== 'H') {
+    $metimas = rand(0, 1) === 0 ? 'H' : 'S';
+    echo $metimas . ' ';
+}
+echo '<br>';
+echo 'B dalis';
+echo '<br>';
+
+$metimas = '';
+$herboCount = 0;
+while ($herboCount !== 3) {
+    $metimas = rand(0, 1) === 0 ? 'H' : 'S';
+    $herboCount = $metimas === 'H' ? ++$herboCount : $herboCount;
+    echo $metimas . ' ';
+}
+echo '<br>';
+echo 'C dalis';
+echo '<br>';
+$metimas = '';
+$herboCount = 0;
+while ($herboCount !== 3) {
+    $metimas = rand(0, 1) === 0 ? 'H' : 'S';
+    $herboCount = $metimas === 'H' ? ++$herboCount : 0;
+    echo $metimas . ' ';
+}
+
+echo '<br>';
+echo '<br>';
+
+echo 'Septintas uzdavinys';
+echo '<br>';
+
+$visiPetroTaskai = 0;
+$visiKazioTaskai = 0;
+$rezultatas = '';
+$laimetojas = '';
+while ($visiPetroTaskai < 222 && $visiKazioTaskai < 222)  {
+    $petroTaskai = rand(10, 20);
+    $kazioTaskai = rand(5, 25);
+    $visiPetroTaskai += $petroTaskai;
+    $visiKazioTaskai += $kazioTaskai;
+    echo 'Petras: ' .$petroTaskai .'Kazys: ' .$kazioTaskai.'<br>';
+    if($petroTaskai > $kazioTaskai) {
+        $laimetojas = 'Petras';   
+    } else {
+        $laimetojas = $petroTaskai < $kazioTaskai ? 'Kazys' : 'Lygiosios';
+    }
+    if($laimetojas !== 'Lygiosios') {
+        echo 'Laimetojas: ' .$laimetojas .'<br>';
+    } else {
+        echo 'Lygiosios<br>';
+    }
+    if($visiPetroTaskai >= 222 || $visiKazioTaskai >= 222) {
+        if($visiPetroTaskai > $visiKazioTaskai) {
+            $laimetojas = 'Petras';
+        } else {
+            $laimetojas = $visiPetroTaskai < $visiKazioTaskai ? 'Kazys' : 'Lygiosios';
+        }
+        if($laimetojas !== 'Lygiosios') {
+            echo 'Laimetojas: ' .$laimetojas .'<br>';
+        } else {
+            echo 'Lygiosios<br>';
+        }
+    }
+    
+}
