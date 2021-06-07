@@ -103,3 +103,14 @@ usort($masyvas1, function($a, $b) {
     }
     return count($a) <=> count($b);
 });
+print_r($masyvas1);
+echo '<br>';
+echo '<br>';
+
+echo 'Penktas uzdavinys';
+echo '<br>';
+$masyvas2 = array_fill(0, 30, '');
+    foreach ($masyvas2 as $key => $value1) {
+        $masyvas2[$key] = ['user_id' => rand(1, 1000000), 'place_in_row' => rand(0, 100)];
+    }
+print_r($masyvas2);
