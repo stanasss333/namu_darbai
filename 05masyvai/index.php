@@ -114,3 +114,15 @@ $masyvas2 = array_fill(0, 30, '');
         $masyvas2[$key] = ['user_id' => rand(1, 1000000), 'place_in_row' => rand(0, 100)];
     }
 print_r($masyvas2);
+echo '<br>';
+echo '<br>';
+
+echo 'Sestas uzdavinys';
+echo '<br>';
+
+foreach ($masyvas2 as $key => $value) {
+    $user_id[$key]  = $value['user_id'];
+    $place_in_row[$key] = $value['place_in_row'];
+}
+array_multisort($place_in_row, SORT_DESC, $user_id, SORT_ASC, $masyvas2);
+print_r($masyvas2);
