@@ -297,4 +297,13 @@ for ($i=0; $i < 10; $i++) {
     }
     echo $array5[$i].' ';
 }
+echo '<br>';
+echo '<br>';
 
+echo 'Vienuoliktas uzdavinys';
+echo '<br>';
+$array6 = [];
+for ($i=0; $i <= 100; $i++) { 
+    array_push($array6, rand(0, 300));
+}
+$array6 = array_unique($array6);
