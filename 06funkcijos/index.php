@@ -63,7 +63,7 @@ echo '<br>';
 echo 'Penktas uzdavinys';
 echo '<br>';
 $masyvas = [];
-foreach (range(1, 100) as $key => $_) {
+foreach (range(1, 10) as $key => $_) {
     $masyvas[$key] = rand(33, 77);
 }
 print_r($masyvas);
@@ -78,6 +78,27 @@ echo '<br>';
 echo 'Sestas uzdavinys';
 echo '<br>';
 $masyvas1 =[];
-foreach (range(1, 100) as $key => $_) {
+foreach (range(1, 10) as $key => $value) {
     $masyvas1[$key] = rand(333, 777);
 }
+
+function isprime($sk) {
+    $kiekis = 0;
+    $daliklis = 2;
+    if (gettype($sk) != "integer") {
+        return 'Tik sveiki skaiciai';
+    }
+    echo $sk;
+    echo '<br>';
+    while ($daliklis < $sk && $daliklis !== $sk) {
+        if ($sk % $daliklis === 0) {
+            echo "Daliklis : $daliklis.<br>";
+            $kiekis++;
+        }
+        $daliklis++;
+    }
+}
+foreach ($masyvas1 as $sk) {
+    echo isprime($sk). ' ';
+}
+
