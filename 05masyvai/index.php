@@ -109,10 +109,17 @@ echo '<br>';
 
 echo 'Penktas uzdavinys';
 echo '<br>';
-$masyvas2 = array_fill(0, 30, '');
-    foreach ($masyvas2 as $key => $value1) {
-        $masyvas2[$key] = ['user_id' => rand(1, 1000000), 'place_in_row' => rand(0, 100)];
+$masyvas2 = [];
+do {
+    $uid = rand(1, 50);
+    foreach ($masyvas2 as $user) {
+        if($user['user_id'] == $uid) {
+            continue 2;
+        }
     }
+    $masyvas2[] = ['user_id' => $uid, 'place_in_row' => rand(0, 100)];
+} while (count($masyvas2) < 30);
+    
 print_r($masyvas2);
 echo '<br>';
 echo '<br>';
@@ -120,9 +127,77 @@ echo '<br>';
 echo 'Sestas uzdavinys';
 echo '<br>';
 
-foreach ($masyvas2 as $key => $value) {
-    $user_id[$key]  = $value['user_id'];
-    $place_in_row[$key] = $value['place_in_row'];
-}
-array_multisort($place_in_row, SORT_DESC, $user_id, SORT_ASC, $masyvas2);
+usort($masyvas2, function($a, $b) {
+    return $a <=> $b;
+});
 print_r($masyvas2);
+usort($masyvas2, function($a, $b) {
+    return $b['place_in_row'] <=> $a['place_in_row'];
+});
+echo '<br>';
+print_r($masyvas2);
+echo '<br>';
+echo '<br>';
+
+echo 'Septintas uzdavinys';
+echo '<br>';
+$masyvas2 = [];
+do {
+    $uid = rand(1, 50);
+    foreach ($masyvas2 as $user) {
+        if($user['user_id'] == $uid) {
+            continue 2;
+        }
+    }
+    $masyvas2[] = ['user_id' => $uid, 'place_in_row' => rand(0, 100)];
+} while (count($masyvas2) < 30);
+foreach ($masyvas2 as &$user) {
+    $user['name'] = '';
+    $user['surname'] = '';
+    foreach (range(1, rand(5, 15)) as $_) {
+        $user['name'] .= range('a', 'z')[rand(0, 25)];
+        $user['surname'] .= range('a', 'z')[rand(0, 25)];
+    }
+}
+print_r($masyvas2);
+echo '<br>';
+echo '<br>';
+
+echo 'Astuntas uzdavinys';
+echo '<br>';
+$masyvas4 = [];
+foreach (range(1, 10) as $key1 => $_) {
+    $num = rand(0, 5);
+    if($num == 0){
+        $masyvas4[$key1] = rand(0, 10);
+    } else {
+        foreach (range(1, $num) as $key2 => $_) {
+            $masyvas4[$key1][] = rand(0, 10);
+        }
+    }
+}
+print_r($masyvas4);
+echo '<br>';
+echo '<br>';
+
+echo 'Devintas uzdavinys';
+echo '<br>';
+usort($masyvas4, function($a, $b) {
+    $asum = 0;
+    if(is_array($a)) {
+        foreach($a as $value) {
+            $asum += $value;
+        }
+        $a = $asum;
+    }
+    $bsum = 0; 
+    if(is_array($b)) {
+        foreach($b as $value) {
+            $bsum += $value;
+        }
+        $b = $bsum;
+    }
+    return $a <=> $b;
+}
+);
+print_r($masyvas4);
