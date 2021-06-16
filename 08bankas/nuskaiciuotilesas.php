@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nuskaiciuoti lesas</title>
 </head>
 <body>
-    
+    <?php include __DIR__ . '/menu.php' ?>
+    <?php $id = $_GET['SaskaitosNr.'] ?? 0 ?>
+    <form style="margin:30px;" action="?action=nuskaiciuotilesas&id=<?= $id ?>" method="post">
+    <input type="text" name="suma">
+    <button>Nuskaiciuoti</button>
+</form>
 </body>
 </html>
