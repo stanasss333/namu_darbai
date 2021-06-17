@@ -1,5 +1,5 @@
 <?php
-$id = $_GET['SaskaitosNr.'] ?? 0;
+$id = $_GET['id'] ?? 0;
 foreach ($saskaitos as $index => $saskaita) {
     if ($saskaita['SaskaitosNr.'] == $id) {
         unset($saskaitos[$index]);
