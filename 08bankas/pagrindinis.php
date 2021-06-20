@@ -47,6 +47,11 @@ tr:nth-child(even) {
       <th class="col-1">Suma</th>
       <th class="col-3">Valdymas</th>
     </tr>
+    <?php
+        usort($saskaitos, function($a, $b) {
+            return $b['Suma'] <=> $a['Suma'];
+        })
+    ?>
     <?php foreach ($saskaitos as $saskaita) :?>
     <tr  class="row">
     

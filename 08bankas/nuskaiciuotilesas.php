@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
+    <?php include __DIR__ . '/msg.php' ?>
     <?php $id = $_GET['id'] ?? 0 ?>
     <form style="margin:30px;" action="?action=nuskaiciuotilesas&id=<?= $id ?>" method="post">
     <input style="border: 2px solid #000000" type="text" name="suma" placeholder="Ivesti suma">
