@@ -10,7 +10,9 @@
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
+    <?php include __DIR__ . '/msg.php' ?>
     <?php $id = $_GET['id'] ?? 0 ?>
+    
     <form style="margin:30px;" action="?action=pridetilesu&id=<?= $id ?>" method="post">
         <input style="border: 2px solid #000000" type="text" name="suma" placeholder="Ivesti suma">
         <button class="btn btn-success"type="submit">Prideti<?= ' '. $id ?></button>

@@ -33,6 +33,7 @@ tr:nth-child(even) {
 </style>
 <body>
 <?php include __DIR__ . '/menu.php' ?>
+<?php include __DIR__ . '/msg.php' ?>
 <!-- https://tailwindcss.com/ -->
 <div class="row">
 <div class="col-2"></div>

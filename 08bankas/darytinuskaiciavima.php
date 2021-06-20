@@ -8,6 +8,7 @@ foreach ($saskaitos as &$saskaita) {
         }
         $saskaita['Suma'] -= (int) $_POST['suma'];
         file_put_contents(__DIR__.'/saskaitos.json', json_encode($saskaitos));
+        setMessage($_POST['suma'] .'Pinigai isimti');
         redirect();
     }
 }
