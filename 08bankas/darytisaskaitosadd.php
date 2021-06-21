@@ -20,10 +20,12 @@
  }
  $newDay = '0'.$day;
  $goodDay = substr($newDay, -2);
-    
+ 
+ $number = 0;
+ $new_number = number_format((float)$number, 2, '.', '');
 
  
-$saskaita =['Vardas' => $vardas[rand(0, count($vardas)-1)], 'Pavarde' => $pavarde[rand(0, count($pavarde)-1)], 'SaskaitosNr.' => 'LT'. rand(100000000000000000, 999999999999999999), 'AsmensKodas' => '3'. $goodYear. $goodMonth. $goodDay. rand(1000, 9999), 'Suma' => 0];
+$saskaita =['Vardas' => $vardas[rand(0, count($vardas)-1)], 'Pavarde' => $pavarde[rand(0, count($pavarde)-1)], 'SaskaitosNr.' => 'LT'. rand(100000000000000000, 999999999999999999), 'AsmensKodas' => '3'. $goodYear. $goodMonth. $goodDay. rand(1000, 9999), 'Suma' => $new_number];
 $saskaitos[] = $saskaita;
 file_put_contents(__DIR__.'/saskaitos.json', json_encode($saskaitos));
 setMessage('Nauja saskaita sukurta');

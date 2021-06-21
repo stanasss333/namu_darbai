@@ -27,8 +27,12 @@ div {
 </head>
 <body class="">
     <h1 class="title">EuroBankas</h1>
-    <div class="center">
-    <a class="btn btn-secondary" href="http://localhost/namu_darbai/08bankas/">Ieiti &&&&&&</a>
+    <div>
+    <?php if (!isset($_SESSION['logged'])) : ?>
+    <a class="btn btn-secondary" href="http://localhost/namu_darbai/08bankas/login.php">Login</a>
+    <?php else : ?>
+    <a href="http://localhost/namu_darbai/08bankas/login.php?logout">Logout</a>
     </div>
+    <?php endif ?>
 </body>
 </html>

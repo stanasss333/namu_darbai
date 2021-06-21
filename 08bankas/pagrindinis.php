@@ -1,3 +1,13 @@
+<?php
+
+// require __DIR__ . '/bootstrap.php';
+
+if (!isset($_SESSION['logged'])) {
+    header('Location: http://localhost/namu_darbai/08bankas/login.php');
+    die;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,19 +59,18 @@ tr:nth-child(even) {
       <th class="col-3">Valdymas</th>
     </tr>
     <?php
-        usort($saskaitos, function($a, $b) {
-            return $b['Suma'] <=> $a['Suma'];
-        })
+       usort($saskaitos, function($a, $b) {
+           return $b['Suma'] <=> $a['Suma'];
+        });
     ?>
     <?php foreach ($saskaitos as $saskaita) :?>
     <tr  class="row">
-    
       <td class="col-2"></td>
       <td class="col-1"><?=$saskaita['Vardas']?></td>
       <td class="col-1"><?=$saskaita['Pavarde']?></td>
       <td class="col-2"><?=$saskaita['SaskaitosNr.']?></td>
       <td class="col-2"><?=$saskaita['AsmensKodas']?></td>
-      <td class="col-1"><?=$saskaita['Suma']?></td>
+      <td class="col-1"><?=number_format((float)$saskaita['Suma'], 2, '.','') ?></td>
       <td class="col-1"><a class="btn btn-success" href="?action=pridetilesu&id=<?= $saskaita['SaskaitosNr.'] ?>">Pridėti</a></td>
       <td class="col-1"><a class="btn btn-primary"  href="?action=nuskaiciuotilesas&id=<?= $saskaita['SaskaitosNr.'] ?>">Išimti</a></td>
       <td class="col-1">

@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+require __DIR__ . '/bootstrap.php';
 function redirect() {
     header('Location: http://localhost/namu_darbai/08bankas/');
     die;
@@ -14,19 +15,7 @@ function redirectToAction($action, $id = 0)
     }
     die;
 }
-function getMessage()
-{
-    if (!isset($_SESSION['msg'])) {
-        return false;
-    }
-    $msg = $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    return $msg;
-}
-function setMessage(string $msg)
-{
-    $_SESSION['msg'] = $msg;
-}
+
 
 // box ['id' => 25, 'amount' => 258]
 
@@ -34,7 +23,7 @@ if (!file_exists(__DIR__.'/saskaitos.json')) {
     file_put_contents(__DIR__.'/saskaitos.json', json_encode([]));
 }
 $saskaitos = json_decode( file_get_contents(__DIR__.'/saskaitos.json'), 1);
-//
+
 
 //Routerio Prosenelis
 
