@@ -21,9 +21,5 @@ class Kibiras2 {
          self::$akmenuKiekisVisuoseKibiruose+=$kiekis;
 
     }
-    public function kiekPririnktaAkmenu() {
-        echo "<h2>Pririnkta akmenu: $this->akmenuKiekis</h2>";
-
-    }
-
+    
 }
