@@ -18,7 +18,6 @@ class Pinigine {
         }
     } 
     public function skaiciuoti() {
-        $this->metaliniaiPinigai += $this->popieriniaiPinigai;
-        echo "<h2>Pinigineje yra: $this->metaliniaiPinigai pinigu</h2>";
+        echo $this->metaliniaiPinigai + $this->popieriniaiPinigai;
     }
 }

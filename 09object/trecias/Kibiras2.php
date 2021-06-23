@@ -6,17 +6,19 @@ class Kibiras2 {
 
     public function __construct(){
         $this->akmenuKiekis = 0;
-        $this->akmenuKiekisVisuoseKibiruose = 0;
+        self::$akmenuKiekisVisuoseKibiruose = 0;
     }
     public static function getAkmenuKiekisVisuoseKibiruose() {
-        return $this->akmenuKiekisVisuoseKibiruose;
+        return self::$akmenuKiekisVisuoseKibiruose;
 
     }
     public function prideti1Akmeni() {
         $this->akmenuKiekis++;
+        self::$akmenuKiekisVisuoseKibiruose++;
     }
     public function pridetiDaugAkmenu($kiekis) {
          $this->akmenuKiekis +=$kiekis;
+         self::$akmenuKiekisVisuoseKibiruose+=$kiekis;
 
     }
     public function kiekPririnktaAkmenu() {
