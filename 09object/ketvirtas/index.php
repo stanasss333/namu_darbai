@@ -9,4 +9,4 @@ echo '<br>';
 $kibiras->pridetiDaugAkmenu(10);
 var_dump($kibiras);
 echo '<br>';
-$kibiras->kiekPririnktaAkmenu();
+_d($kibiras->kiekPririnktaAkmenu());

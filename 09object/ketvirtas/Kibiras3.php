@@ -7,14 +7,14 @@ class Kibiras3 {
         $this->akmenuKiekis = 0;
     }
     public function prideti1Akmeni() {
-        $this->akmenuKiekis++;
+         $this->akmenuKiekis++;
     }
     public function pridetiDaugAkmenu($kiekis) {
-         $this->akmenuKiekis +=$kiekis;
+        $this->akmenuKiekis +=$kiekis;
 
     }
     public function kiekPririnktaAkmenu() {
-        echo "<h2>Pririnkta akmenu: $this->akmenuKiekis</h2>";
+        return $this->akmenuKiekis;
 
     }
 }
