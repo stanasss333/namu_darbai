@@ -3,6 +3,8 @@ namespace Bankas;
 use Bankas\App;
 use Saskaitos\SaskaitosController;
 use Login\LoginController;
+
+require DIR.'vendor/autoload.php';
 define('ENTER', true);
 require __DIR__ .'/Planas.php';
 require __DIR__ . '/bootstrap.php';

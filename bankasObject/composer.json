@@ -9,7 +9,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Bankas\\": "app/",
+            "Saskaitos\\": "app/",
+            "Login\\": "app/"
         }
     },
     "require": {}
