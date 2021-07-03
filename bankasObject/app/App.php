@@ -1,5 +1,7 @@
 <?php
 
+namespace Bankas;
+
 class App implements Planas {
 
     public static function start()
@@ -46,6 +48,7 @@ class App implements Planas {
         if ($uri[0] === '' && count($uri) === 1) {
             return (new LoginController)->login();
         }
+
         // 1. Agurku deziu saraso atvaizdavimas GET
         if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
             require DIR.'pagrindinis.php';

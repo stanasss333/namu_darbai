@@ -1,5 +1,7 @@
 <?php
 
+namespace Saskaitos;
+
 class SaskaitosController {
 
 
