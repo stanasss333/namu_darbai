@@ -1,5 +1,7 @@
 <?php
 
+namespace Plan;
+
 interface Planas {
     function start();
     function view($file, $data);

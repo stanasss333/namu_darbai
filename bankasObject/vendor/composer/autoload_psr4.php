@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Strap\\' => array('/'),
     'Saskaitos\\' => array($baseDir . '/app'),
+    'Plan\\' => array($baseDir . '/app'),
     'Login\\' => array($baseDir . '/app'),
     'Bankas\\' => array($baseDir . '/app'),
 );

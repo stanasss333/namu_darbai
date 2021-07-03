@@ -1,4 +1,6 @@
 <?php
+namespace Strap;
+
 defined('ENTER') || die;
 session_start();
 define('DIR', __DIR__.'/');

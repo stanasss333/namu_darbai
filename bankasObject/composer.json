@@ -11,7 +11,9 @@
         "psr-4": {
             "Bankas\\": "app/",
             "Saskaitos\\": "app/",
-            "Login\\": "app/"
+            "Login\\": "app/",
+            "Plan\\": "app/",
+            "Strap\\": "/"
         }
     },
     "require": {}
