@@ -1,11 +1,11 @@
 <?php
-namespace Strap;
 
 defined('ENTER') || die;
+require __DIR__ .'/vendor/autoload.php';
 session_start();
 define('DIR', __DIR__.'/');
-define('URL', 'http://localhost/namu_darbai/bankasObject/');
-define('INSTALL_DIR', '/namu_darbai/bankasObject/');
+define('URL', 'http://localhost/namu_darbai/bankasObject/public/');
+define('INSTALL_DIR', '/namu_darbai/bankasObject/public/');
 
 function getMessage()
 {

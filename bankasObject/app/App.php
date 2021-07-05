@@ -1,6 +1,7 @@
 <?php
 
 namespace Bankas;
+use Plan\Planas;
 
 class App implements Planas {
 
@@ -16,18 +17,10 @@ class App implements Planas {
         extract($data);
         require DIR.'views/'.$file.'.php';
     }
-    function redirect() {
-        header('Location: http://localhost/namu_darbai/bankasObject/');
-        die;
-    }
-    function redirectToAction($action, $id = 0) 
+
+    public static function redirect($path = '') 
     {
-        if ($id) {
-            header('Location: http://localhost/namu_darbai/bankasObject/?action='.$action.'&id='.$id);
-        }
-        else {
-            header('Location: http://localhost/namu_darbai/bankasObject/?action='.$action);
-        }
+        header('Location: '.URL.$path);
         die;
     }
 
@@ -51,42 +44,47 @@ class App implements Planas {
 
         // 1. Agurku deziu saraso atvaizdavimas GET
         if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
-            require DIR.'pagrindinis.php';
+            self::view('pagrindinis');
         }
 
         // 2. Pridejimo atvaizdavimas GET
-        elseif ($_GET['action'] == 'pridetilesu' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-            require DIR.'pridetilesu.php';
-        }
-
-        // 3. Pridejimo vykdymas POST
-        elseif ($_GET['action'] == 'pridetilesu' && $_SERVER['REQUEST_METHOD'] == 'POST') {
-            require DIR.'darytipridejima.php';
+        
+        if ('pridetilesu' == $uri[0] && isset($uri[1])) {
+            if ('GET' == $_SERVER['REQUEST_METHOD']) {
+                return (new SaskaitosController)->add($uri[1]);
+            }
+            else {
+                // 3. Pridejimo vykdymas POST
+                return (new SaskaitosController)->doAdd($uri[1]);
+            }
         }
 
         // 4. Isemimo atvaizdavimas GET
-        elseif ($_GET['action'] == 'nuskaiciuotilesas' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-            require DIR.'nuskaiciuotilesas.php';
-        }
-
-        // 5. Isemimo vykdymas POST
-        elseif ($_GET['action'] == 'nuskaiciuotilesas' && $_SERVER['REQUEST_METHOD'] == 'POST') {
-            require DIR.'darytinuskaiciavima.php';
+        
+        if ('nuskaiciuotilesas' == $uri[0] && isset($uri[1])) {
+            if ('GET' == $_SERVER['REQUEST_METHOD']) {
+                return (new SaskaitosController)->remove($uri[1]);
+            }
+            else {
+                // 5. Isemimo vykdymas POST
+                return (new SaskaitosController)->doRemove($uri[1]);
+            }
         }
 
         // 6. Naujos dezes pridejimo atvaizdavimas GET
-        elseif ($_GET['action'] == 'prideti-saskaita' && $_SERVER['REQUEST_METHOD'] == 'GET') {
-            require DIR.'pridetiSaskaita.php';
-        }
-
-        // 7. Naujos dezes pridejimo vykdymas POST
-        elseif ($_GET['action'] == 'prideti-saskaita' && $_SERVER['REQUEST_METHOD'] == 'POST') {
-            require DIR.'darytisaskaitosadd.php';
+        if ('prideti-saskaita' == $uri[0]) {
+            if ('GET' == $_SERVER['REQUEST_METHOD']) {
+                return (new SaskaitosController)->create();
+            }
+            else {
+                // 7. Naujos dezes pridejimo vykdymas POST
+                return (new SaskaitosController)->save();
+            }
         }
 
         // 8. Dezes trynimo vykdymas POST
-        elseif ($_GET['action'] == 'delete' && $_SERVER['REQUEST_METHOD'] == 'POST') {
-            require DIR.'doDelete.php';
+        if ('delete' == $uri[0] && isset($uri[1]) && 'POST' == $_SERVER['REQUEST_METHOD']) {
+            return (new SaskaitosController)->delete($uri[1]);
         }
        
         self::view('404');
