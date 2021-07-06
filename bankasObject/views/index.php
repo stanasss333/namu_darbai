@@ -1,7 +1,7 @@
 <?php require DIR.'views/top.php' ?>
-<?php require DIR.'views/main.css' ?>
-<?php include DIR.'menu.php' ?>
-<?php include DIR.'msg.php' ?>
+<?php require DIR.'views/menu.php' ?>
+<?php include DIR.'views/msg.php' ?>
+
 <div class="row">
 <div class="col-2"></div>
 <div class="col-11">
