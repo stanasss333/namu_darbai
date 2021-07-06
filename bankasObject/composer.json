@@ -10,6 +10,7 @@
     "autoload": {
         "psr-4": {
             "Bankas\\": "app/",
+            "App\\DB\\": "app/",
             "Saskaitos\\": "app/",
             "Login\\": "app/",
             "Plan\\": "app/",
