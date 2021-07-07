@@ -52,6 +52,7 @@ class SaskaitosController {
 
     public function create()
     {
+
         return App::view('pridetisaskaita');
     }
 

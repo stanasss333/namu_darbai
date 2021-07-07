@@ -1,5 +1,5 @@
 <?php require DIR.'views/top.php' ?>
-<?php include DIR.'views/msg.php' ?>
+<?php //include DIR.'views/msg.php' ?>
 <h1>Login</h1>
     <a class="btn btn-secondary" href="http://localhost/namu_darbai/bankasObject/bankas.php">Pagrindinis</a>
     <form class="center" action="http://localhost/namu_darbai/bankasObject/login.php" method="post">

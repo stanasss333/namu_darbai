@@ -1,6 +1,6 @@
 <?php require DIR.'views/top.php' ?>
 <?php require DIR.'views/menu.php' ?>
-<?php include DIR.'views/msg.php' ?>
+<?php //include DIR.'views/msg.php' ?>
 
 <div class="row">
 <div class="col-2"></div>

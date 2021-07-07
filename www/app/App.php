@@ -1,6 +1,7 @@
 <?php
 
 namespace Bankas;
+use Bankas\SaskaitosController;
 
 class App {
 
@@ -25,22 +26,33 @@ class App {
 
     private static function router()
     {
-        //$uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
-        $uri = $_SERVER['REQUEST_URI'];
+        $uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
+        //$uri = $_SERVER['REQUEST_URI'];
+        //echo $uri;
         $uri = explode('/', $uri);
-        array_shift($uri);
-
+        //array_shift($uri);
         
+        print_r($uri);
+        //die;
+
+
+        //if ('' == $uri[2]) {
+
+          //  return (new SaskaitosController)->create();
+
+        //}
 
         // 1. Agurku deziu saraso atvaizdavimas GET
         //if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
           //  self::view('pagrindinis');
         //}
         // 6. Naujos dezes pridejimo atvaizdavimas GET
-        if ('prideti-saskaita' == $uri[0]) {
+        if ('pridetisaskaita' == $uri[0]) {
+
+
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 
-                //return (new SaskaitosController)->create();
+                return (new SaskaitosController)->create();
             }
             else {
                 // 7. Naujos dezes pridejimo vykdymas POST
