@@ -1,9 +1,8 @@
 <?php
 
-namespace Saskaitos;
-use Plan1\Planas1;
+namespace Bankas;
 
-class SaskaitosController implements Planas1 {
+class SaskaitosController {
 
 
     public function saskaituTest($wahatToSay)
@@ -53,7 +52,7 @@ class SaskaitosController implements Planas1 {
 
     public function create()
     {
-        return App::view('prideti-saskaita');
+        return App::view('pridetisaskaita');
     }
 
     public function save()

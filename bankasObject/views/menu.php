@@ -1,3 +1,4 @@
+
 <div>
-<a class="btn btn-secondary" href="?action=prideti-saskaita">Pridėti naują saskaita</a>
+<a class="btn btn-secondary" href="<?= URL ?>prideti-saskaita">Pridėti naują saskaita</a>
 </div>
